@@ -1,0 +1,66 @@
+{% extends 'users/userbase.html' %}
+{% block title %}{% endblock %}
+{% block admin_home %}active{% endblock %}
+
+{% block content %}
+    <style>
+
+        .jumbotron {
+            margin-top: 20%;
+            height: 450px;
+            background: #fff;
+        }
+    </style>
+    <center>
+        <section id="main" class="align-items-center">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h3>Hybrid <span style="color:#710069;font-family: georgia,sans-serif;font-weight: bold;">Machine Learning Results:</span></h3>
+     <table class="table" border="2">
+            <tr>
+                <th>S.NO</th>
+                <th>Algorithm</th>
+                <th>Accuracy</th>
+                <th>Precession</th>
+                <th>Recall</th>
+                <th>F1-Score</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Support Vector Machine</td>
+                <td>{{svc.svc_accuracy}}</td>
+                <td>{{svc.svc_precision}}</td>
+                <td>{{svc.svc_recall}}</td>
+                <td>{{svc.svc_f1score}}</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Artificail Neural Network</td>
+                <td>{{ann.ann_accuracy}}</td>
+                <td>{{ann.ann_precision}}</td>
+                <td>{{ann.ann_recall}}</td>
+                <td>{{ann.ann_f1score}}</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>J48 Decision Tree</td>
+                <td>{{j48.j48_accuracy}}</td>
+                <td>{{j48.j48_precision}}</td>
+                <td>{{j48.j48_recall}}</td>
+                <td>{{j48.j48_f1score}}</td>
+            </tr>
+          <tr>
+                <td>4</td>
+                <td>Proposed Method</td>
+                <td>{{my.my_accuracy}}</td>
+                <td>{{my.my_precision}}</td>
+                <td>{{my.my_recall}}</td>
+                <td>{{my.my_f1score}}</td>
+            </tr>
+        </table>
+
+
+        </section>
+    </center>
+
+{% endblock %}

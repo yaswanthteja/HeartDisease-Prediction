@@ -1,0 +1,28 @@
+{% extends 'users/userbase.html' %}
+{% block title %}{% endblock %}
+{% block admin_home %}active{% endblock %}
+
+{% block content %}
+    <style>
+
+        .jumbotron {
+            margin-top: 20%;
+            height: 450px;
+            background: #fff;
+        }
+    </style>
+    <center>
+        <section id="main" class="align-items-center">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <h2>HMM Results</h2>
+            <pre>
+            {% for i in hmm %}
+              {% for key,value in i.items%}
+               {{key}} &nbsp; ={{value}}
+              {%endfor%}
+            {%endfor%}
+            </pre>
+        </section>
+    </center>
+
+{% endblock %}
